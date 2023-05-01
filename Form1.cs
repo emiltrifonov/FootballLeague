@@ -3,7 +3,6 @@ namespace FootballLeague
     public partial class Form1 : Form
     {
 
-
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +38,9 @@ namespace FootballLeague
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            
+            CreatePlayersForm form = new CreatePlayersForm();
+            form.ShowDialog();
+            this.Hide();
         }
     }
 }
