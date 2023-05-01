@@ -1,6 +1,6 @@
 ﻿namespace FootballLeague
 {
-    partial class CreatePlayersForm
+    partial class PlayersForm
     {
         /// <summary>
         /// Required designer variable.

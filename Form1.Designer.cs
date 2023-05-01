@@ -123,6 +123,7 @@
             buttonUpdate.TabIndex = 3;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonDelete
             // 
@@ -137,6 +138,7 @@
             buttonDelete.TabIndex = 4;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // Form1
             // 
