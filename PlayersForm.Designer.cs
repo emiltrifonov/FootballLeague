@@ -129,7 +129,7 @@
             buttonCreate.BackColor = Color.LightGreen;
             buttonCreate.Font = new Font("Montserrat", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCreate.ForeColor = SystemColors.ControlText;
-            buttonCreate.Location = new Point(108, 269);
+            buttonCreate.Location = new Point(117, 267);
             buttonCreate.Name = "buttonCreate";
             buttonCreate.Size = new Size(190, 56);
             buttonCreate.TabIndex = 9;
@@ -137,7 +137,7 @@
             buttonCreate.UseVisualStyleBackColor = false;
             buttonCreate.Click += buttonCreate_Click;
             // 
-            // CreatePlayersForm
+            // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -152,7 +152,7 @@
             Controls.Add(textBoxName);
             Controls.Add(label1);
             Controls.Add(labelName);
-            Name = "CreatePlayersForm";
+            Name = "PlayersForm";
             Text = "CreatePlayersForm";
             Load += CreatePlayersForm_Load;
             ResumeLayout(false);

@@ -1,3 +1,6 @@
+using FootballLeague.Models;
+using System.Windows.Forms;
+
 namespace FootballLeague
 {
     public partial class Form1 : Form
@@ -38,68 +41,83 @@ namespace FootballLeague
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+            Form form = new Form();
             switch (this.Text)
             {
                 case "Players":
-                    PlayersForm form = new PlayersForm(new Models.Player(), "Create");
-                    this.Hide();
-                    form.ShowDialog();
+                    form = new PlayersForm(new Models.Player(), "Create");
+                    break;
+                case "Matches":
+                    form = new MatchesForm(new Models.Match(), "Create");
                     break;
                 // Add cases for other tabs if desired
                 default:
                     MessageBox.Show("Invalid tab selection!");
                     break;
             }
+            this.Hide();
+            form.ShowDialog();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("First select the row you want to edit!");
+                return;
+            }
+
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            string value = selectedRow.Cells[0].Value.ToString();
+            Form form = new Form();
+
             switch (this.Text)
             {
                 case "Players":
-                    if (dataGridView1.SelectedRows.Count == 0)
-                    {
-                        MessageBox.Show("First select the row you want to edit!");
-                        return;
-                    }
-
-                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                    string value = selectedRow.Cells[0].Value.ToString();
                     var player = Program.context.Players.Where(x => x.player_id == int.Parse(value)).FirstOrDefault();
-                    PlayersForm form = new PlayersForm(player, "Update");
-                    this.Hide();
-                    form.ShowDialog();
+                    form = new PlayersForm(player, "Update");
+                    break;
+                case "Matches":
+                    Match match = Program.context.Matches.Where(x => x.match_id == int.Parse(value)).FirstOrDefault();
+                    form = new MatchesForm(match, "Update");
                     break;
                 // Add cases for other tabs if desired
                 default:
                     MessageBox.Show("Invalid tab selection!");
-                    break;
+                    return;
             }
+
+            this.Hide();
+            form.ShowDialog();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("First select the row you want to edit!");
+                return;
+            }
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            string value = selectedRow.Cells[0].Value.ToString();
+            Form form = new Form();
             switch (this.Text)
             {
                 case "Players":
-                    if (dataGridView1.SelectedRows.Count == 0)
-                    {
-                        MessageBox.Show("First select the row you want to edit!");
-                        return;
-                    }
-
-                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                    string value = selectedRow.Cells[0].Value.ToString();
                     var player = Program.context.Players.Where(x => x.player_id == int.Parse(value)).FirstOrDefault();
-                    PlayersForm form = new PlayersForm(player, "Delete");
-                    this.Hide();
-                    form.ShowDialog();
+                    form = new PlayersForm(player, "Delete");
+                    break;
+                case "Matches":
+                    Match match = Program.context.Matches.Where(x => x.match_id == int.Parse(value)).FirstOrDefault();
+                    form = new MatchesForm(match, "Delete");
                     break;
                 // Add cases for other tabs if desired
                 default:
                     MessageBox.Show("Invalid tab selection!");
-                    break;
+                    return;
             }
+            this.Hide();
+            form.ShowDialog();
         }
     }
 }

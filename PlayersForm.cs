@@ -36,9 +36,9 @@ namespace FootballLeague
             var teams = Program.context.Teams.Select(x => x.name).ToArray();
             comboBoxTeam.Items.AddRange(teams);
 
-            if(action != "Create")
+            if (action != "Create")
             {
-                comboBoxPositions.SelectedItem = Program.context.PlayerPositions.Where(x=>x.position_id == player.position).FirstOrDefault().position_name;
+                comboBoxPositions.SelectedItem = Program.context.PlayerPositions.Where(x => x.position_id == player.position).FirstOrDefault().position_name;
                 comboBoxTeam.SelectedItem = Program.context.Teams.Where(x => x.team_id == player.team).FirstOrDefault().name;
                 textBoxName.Text = player.name;
                 textBoxNumber.Text = Convert.ToString(player.number);
@@ -89,7 +89,7 @@ namespace FootballLeague
                         number = int.Parse(textBoxNumber.Text),
                         position = position.position_id,
                         team = team.team_id,
-                        player_id = Program.context.Players.Count()                        
+                        player_id = Program.context.Players.Count()
                     };
 
                     Program.context.Players.Add(newPlayer);

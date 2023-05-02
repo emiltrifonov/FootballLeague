@@ -48,3 +48,4 @@ C:\Users\Petur\Documents\FootballLeague\FootballLeague\obj\Debug\net6.0-windows\
 C:\Users\Petur\Documents\FootballLeague\FootballLeague\obj\Debug\net6.0-windows\ref\FootballLeague.dll
 C:\Users\Petur\Documents\FootballLeague\FootballLeague\bin\Debug\net6.0-windows\FootballLeague.dll.config
 C:\Users\Petur\Documents\FootballLeague\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.PlayersForm.resources
+C:\Users\Petur\Documents\FootballLeague\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.MatchesForm.resources
