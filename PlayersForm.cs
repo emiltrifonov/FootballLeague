@@ -61,8 +61,8 @@ namespace FootballLeague
                     buttonCreate.BackColor = Color.LightCoral;
                     labelName.Text = "DELETE - PLAYER";
 
-                    textBoxName.ReadOnly = true;
-                    textBoxNumber.ReadOnly = true;
+                    textBoxName.Enabled = false;
+                    textBoxNumber.Enabled = false;
                     comboBoxPositions.Enabled = false;
                     comboBoxTeam.Enabled = false;
                     break;
@@ -73,11 +73,11 @@ namespace FootballLeague
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             var position = Program.context.PlayerPositions
-                .Where(x => x.position_name == comboBoxPositions.SelectedItem)
+                .Where(x => x.position_name == comboBoxPositions.SelectedItem.ToString())
                 .FirstOrDefault();
 
             var team = Program.context.Teams
-                .Where(x => x.name == comboBoxTeam.SelectedItem)
+                .Where(x => x.name == comboBoxTeam.SelectedItem.ToString())
                 .FirstOrDefault();
 
             switch (action)
@@ -89,7 +89,7 @@ namespace FootballLeague
                         number = int.Parse(textBoxNumber.Text),
                         position = position.position_id,
                         team = team.team_id,
-                        player_id = Program.context.Players.Count()
+                        player_id = Program.context.Players.Count() + 1
                     };
 
                     Program.context.Players.Add(newPlayer);
@@ -119,5 +119,11 @@ namespace FootballLeague
             mainForm.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new Form1();
+            this.Hide();
+            form.ShowDialog();
+        }
     }
 }

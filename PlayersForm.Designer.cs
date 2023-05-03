@@ -38,25 +38,26 @@
             comboBoxTeam = new ComboBox();
             textBoxNumber = new TextBox();
             buttonCreate = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new Font("Montserrat", 21.7499962F, FontStyle.Regular, GraphicsUnit.Point);
+            labelName.Font = new Font("Microsoft Sans Serif", 21.7499962F, FontStyle.Regular, GraphicsUnit.Point);
             labelName.Location = new Point(59, 9);
             labelName.Name = "labelName";
-            labelName.Size = new Size(278, 35);
+            labelName.Size = new Size(272, 33);
             labelName.TabIndex = 0;
             labelName.Text = "CREATE - PLAYER";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(69, 61);
             label1.Name = "label1";
-            label1.Size = new Size(59, 19);
+            label1.Size = new Size(52, 18);
             label1.TabIndex = 1;
             label1.Text = "Name:";
             // 
@@ -70,30 +71,30 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(53, 113);
             label2.Name = "label2";
-            label2.Size = new Size(75, 19);
+            label2.Size = new Size(66, 18);
             label2.TabIndex = 3;
             label2.Text = "Position:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(73, 166);
             label3.Name = "label3";
-            label3.Size = new Size(55, 19);
+            label3.Size = new Size(50, 18);
             label3.TabIndex = 4;
             label3.Text = "Team:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(52, 221);
             label4.Name = "label4";
-            label4.Size = new Size(76, 19);
+            label4.Size = new Size(65, 18);
             label4.TabIndex = 5;
             label4.Text = "Number:";
             // 
@@ -127,9 +128,9 @@
             buttonCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonCreate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             buttonCreate.BackColor = Color.LightGreen;
-            buttonCreate.Font = new Font("Montserrat", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCreate.Font = new Font("Microsoft Sans Serif", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCreate.ForeColor = SystemColors.ControlText;
-            buttonCreate.Location = new Point(117, 267);
+            buttonCreate.Location = new Point(117, 347);
             buttonCreate.Name = "buttonCreate";
             buttonCreate.Size = new Size(190, 56);
             buttonCreate.TabIndex = 9;
@@ -137,11 +138,24 @@
             buttonCreate.UseVisualStyleBackColor = false;
             buttonCreate.Click += buttonCreate_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(131, 279);
+            button1.Name = "button1";
+            button1.Size = new Size(161, 42);
+            button1.TabIndex = 10;
+            button1.Text = "Menu";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // PlayersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(400, 359);
+            ClientSize = new Size(400, 439);
+            Controls.Add(button1);
             Controls.Add(buttonCreate);
             Controls.Add(textBoxNumber);
             Controls.Add(comboBoxTeam);
@@ -171,5 +185,6 @@
         private ComboBox comboBoxTeam;
         private TextBox textBoxNumber;
         private Button buttonCreate;
+        private Button button1;
     }
 }

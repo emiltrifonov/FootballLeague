@@ -1910,19 +1910,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Petur\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Petur\\Documents\\FootballLeague\\FootballLeague\\FootballLeague.csproj",
+      "projectUniqueName": "E:\\School\\informatika\\FootballLeague\\FootballLeague.csproj",
       "projectName": "FootballLeague",
-      "projectPath": "C:\\Users\\Petur\\Documents\\FootballLeague\\FootballLeague\\FootballLeague.csproj",
-      "packagesPath": "C:\\Users\\Petur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Petur\\Documents\\FootballLeague\\FootballLeague\\obj\\",
+      "projectPath": "E:\\School\\informatika\\FootballLeague\\FootballLeague.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "E:\\School\\informatika\\FootballLeague\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Petur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1930,7 +1930,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
@@ -1972,7 +1972,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -50,6 +50,9 @@ namespace FootballLeague
                 case "Matches":
                     form = new MatchesForm(new Models.Match(), "Create");
                     break;
+                case "Teams":
+                    form = new TeamsForm(new Models.Team(), "Create");
+                    break;
                 // Add cases for other tabs if desired
                 default:
                     MessageBox.Show("Invalid tab selection!");
@@ -74,12 +77,16 @@ namespace FootballLeague
             switch (this.Text)
             {
                 case "Players":
-                    var player = Program.context.Players.Where(x => x.player_id == int.Parse(value)).FirstOrDefault();
+                    Player player = Program.context.Players.Where(x => x.player_id == int.Parse(value)).FirstOrDefault();
                     form = new PlayersForm(player, "Update");
                     break;
                 case "Matches":
                     Match match = Program.context.Matches.Where(x => x.match_id == int.Parse(value)).FirstOrDefault();
                     form = new MatchesForm(match, "Update");
+                    break;
+                case "Teams":
+                    Team team = Program.context.Teams.Where(x => x.team_id == int.Parse(value)).FirstOrDefault();
+                    form = new TeamsForm(team, "Update");
                     break;
                 // Add cases for other tabs if desired
                 default:
@@ -110,6 +117,10 @@ namespace FootballLeague
                 case "Matches":
                     Match match = Program.context.Matches.Where(x => x.match_id == int.Parse(value)).FirstOrDefault();
                     form = new MatchesForm(match, "Delete");
+                    break;
+                case "Teams":
+                    Team team = Program.context.Teams.Where(x => x.team_id == int.Parse(value)).FirstOrDefault();
+                    form = new TeamsForm(team, "Delete");
                     break;
                 // Add cases for other tabs if desired
                 default:

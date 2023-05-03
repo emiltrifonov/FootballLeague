@@ -37,20 +37,20 @@
             label4 = new Label();
             dateTimePicker = new DateTimePicker();
             label5 = new Label();
-            dataGridView1 = new DataGridView();
-            label6 = new Label();
             buttonEditGoals = new Button();
             buttonAction = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            button1 = new Button();
+            dataGridViewGoals = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGoals).BeginInit();
             SuspendLayout();
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new Font("Montserrat", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
+            labelName.Font = new Font("Microsoft Sans Serif", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
             labelName.Location = new Point(132, 21);
             labelName.Name = "labelName";
-            labelName.Size = new Size(196, 43);
+            labelName.Size = new Size(186, 39);
             labelName.TabIndex = 0;
             labelName.Text = "MATCHES";
             // 
@@ -66,10 +66,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(47, 95);
             label2.Name = "label2";
-            label2.Size = new Size(105, 19);
+            label2.Size = new Size(95, 18);
             label2.TabIndex = 10;
             label2.Text = "Home Team:";
             // 
@@ -85,10 +85,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(50, 138);
             label3.Name = "label3";
-            label3.Size = new Size(102, 19);
+            label3.Size = new Size(89, 18);
             label3.TabIndex = 12;
             label3.Text = "Away Team:";
             // 
@@ -104,10 +104,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(75, 180);
             label4.Name = "label4";
-            label4.Size = new Size(72, 19);
+            label4.Size = new Size(64, 18);
             label4.TabIndex = 14;
             label4.Text = "Referee:";
             // 
@@ -121,45 +121,23 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(92, 224);
             label5.Name = "label5";
-            label5.Size = new Size(49, 19);
+            label5.Size = new Size(43, 18);
             label5.TabIndex = 17;
             label5.Text = "Date:";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 419);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(457, 150);
-            dataGridView1.TabIndex = 18;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new Font("Montserrat", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(12, 390);
-            label6.Name = "label6";
-            label6.Size = new Size(62, 23);
-            label6.TabIndex = 19;
-            label6.Text = "Goals";
             // 
             // buttonEditGoals
             // 
             buttonEditGoals.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonEditGoals.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             buttonEditGoals.BackColor = Color.Gold;
-            buttonEditGoals.Font = new Font("Montserrat", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEditGoals.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditGoals.ForeColor = SystemColors.ControlText;
-            buttonEditGoals.Location = new Point(292, 379);
+            buttonEditGoals.Location = new Point(150, 406);
             buttonEditGoals.Name = "buttonEditGoals";
-            buttonEditGoals.Size = new Size(153, 34);
+            buttonEditGoals.Size = new Size(170, 34);
             buttonEditGoals.TabIndex = 9;
             buttonEditGoals.Text = "Edit goals";
             buttonEditGoals.UseVisualStyleBackColor = false;
@@ -170,25 +148,48 @@
             buttonAction.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonAction.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             buttonAction.BackColor = Color.LightGreen;
-            buttonAction.Font = new Font("Montserrat", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAction.Font = new Font("Microsoft Sans Serif", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAction.ForeColor = SystemColors.ControlText;
-            buttonAction.Location = new Point(138, 274);
+            buttonAction.Location = new Point(132, 332);
             buttonAction.Name = "buttonAction";
-            buttonAction.Size = new Size(190, 56);
+            buttonAction.Size = new Size(207, 56);
             buttonAction.TabIndex = 10;
             buttonAction.Text = "Create";
             buttonAction.UseVisualStyleBackColor = false;
             buttonAction.Click += buttonAction_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(157, 269);
+            button1.Name = "button1";
+            button1.Size = new Size(161, 42);
+            button1.TabIndex = 20;
+            button1.Text = "Menu";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // dataGridViewGoals
+            // 
+            dataGridViewGoals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewGoals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewGoals.Dock = DockStyle.Bottom;
+            dataGridViewGoals.Location = new Point(0, 470);
+            dataGridViewGoals.Name = "dataGridViewGoals";
+            dataGridViewGoals.RowTemplate.Height = 25;
+            dataGridViewGoals.Size = new Size(474, 150);
+            dataGridViewGoals.TabIndex = 23;
+            // 
             // MatchesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(457, 569);
+            ClientSize = new Size(474, 620);
+            Controls.Add(dataGridViewGoals);
+            Controls.Add(button1);
             Controls.Add(buttonAction);
             Controls.Add(buttonEditGoals);
-            Controls.Add(label6);
-            Controls.Add(dataGridView1);
             Controls.Add(label5);
             Controls.Add(dateTimePicker);
             Controls.Add(comboBoxReferee);
@@ -201,7 +202,7 @@
             Name = "MatchesForm";
             Text = "MatchesForm";
             Load += MatchesForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGoals).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,9 +218,9 @@
         private Label label4;
         private DateTimePicker dateTimePicker;
         private Label label5;
-        private DataGridView dataGridView1;
-        private Label label6;
         private Button buttonEditGoals;
         private Button buttonAction;
+        private Button button1;
+        private DataGridView dataGridViewGoals;
     }
 }
