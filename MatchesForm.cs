@@ -44,7 +44,7 @@ namespace FootballLeague
                 comboBoxAwayTeam.SelectedItem = Program.context.Teams.Where(x => x.team_id == match.team_2).FirstOrDefault().name;
                 comboBoxReferee.SelectedItem = Program.context.Referees.Where(x => x.referee_id == match.main_referee).FirstOrDefault().name;
                 dateTimePicker.Value = match.date;
-                dataGridViewGoals.DataSource = Program.context.Goals.Where(x => x.match_id == match.match_id).Select(x => new { x.team, x.player, x.minute }).ToArray();
+                dataGridViewGoals.DataSource = Program.context.Goals.Where(x => x.match_id == match.match_id).Select(x => new { x.goal_id, x.team, x.player, x.minute }).ToArray();
             }
 
 
@@ -124,21 +124,23 @@ namespace FootballLeague
         {
             string action = "", goalID = "";
 
-            if (dataGridViewGoals.RowCount == 0)
+            if (dataGridViewGoals.RowCount == 0 || dataGridViewGoals.RowCount != 0 && dataGridViewGoals.SelectedRows.Count == 0)
             {
-                action = "Create";
+                var goalform = new GoalsForm(match);
+                this.Hide();
+                goalform.ShowDialog();
             }
             else if (dataGridViewGoals.SelectedRows.Count == 0)
             {
                 MessageBox.Show("First select the row you want to edit!");
                 return;
             }
-            else
+            else if (dataGridViewGoals.SelectedRows.Count != 0)
             {
                 DataGridViewRow selectedRow = dataGridViewGoals.SelectedRows[0];
                 goalID = selectedRow.Cells[0].Value.ToString();
             }
-            var goal = Program.context.Goals.Where(x => x.goal_id == int.Parse(goalID)).FirstOrDefault();
+            Goal goal = Program.context.Goals.Where(x => x.goal_id == int.Parse(goalID)).FirstOrDefault();
             var form = new GoalsForm(match, action, goal);
             this.Hide();
             form.ShowDialog();

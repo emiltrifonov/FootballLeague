@@ -46,13 +46,13 @@
             // 
             // labelName
             // 
-            labelName.AutoSize = true;
             labelName.Font = new Font("Microsoft Sans Serif", 26.2499962F, FontStyle.Regular, GraphicsUnit.Point);
-            labelName.Location = new Point(132, 21);
+            labelName.Location = new Point(0, 21);
             labelName.Name = "labelName";
-            labelName.Size = new Size(186, 39);
+            labelName.Size = new Size(474, 39);
             labelName.TabIndex = 0;
             labelName.Text = "MATCHES";
+            labelName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBoxHomeTeam
             // 

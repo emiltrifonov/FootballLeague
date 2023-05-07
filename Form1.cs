@@ -53,7 +53,9 @@ namespace FootballLeague
                 case "Teams":
                     form = new TeamsForm(new Models.Team(), "Create");
                     break;
-                // Add cases for other tabs if desired
+                case "Referees":
+                    form = new RefereesForm(new Models.Referee(), "Create");
+                    break;
                 default:
                     MessageBox.Show("Invalid tab selection!");
                     break;
@@ -88,7 +90,10 @@ namespace FootballLeague
                     Team team = Program.context.Teams.Where(x => x.team_id == int.Parse(value)).FirstOrDefault();
                     form = new TeamsForm(team, "Update");
                     break;
-                // Add cases for other tabs if desired
+                case "Referees":
+                    Referee referee = Program.context.Referees.Where(x => x.referee_id == int.Parse(value)).FirstOrDefault();
+                    form = new RefereesForm(referee, "Update");
+                    break;
                 default:
                     MessageBox.Show("Invalid tab selection!");
                     return;
@@ -122,7 +127,10 @@ namespace FootballLeague
                     Team team = Program.context.Teams.Where(x => x.team_id == int.Parse(value)).FirstOrDefault();
                     form = new TeamsForm(team, "Delete");
                     break;
-                // Add cases for other tabs if desired
+                case "Referees":
+                    Referee referee = Program.context.Referees.Where(x => x.referee_id == int.Parse(value)).FirstOrDefault();
+                    form = new RefereesForm(referee, "Delete");
+                    break;
                 default:
                     MessageBox.Show("Invalid tab selection!");
                     return;

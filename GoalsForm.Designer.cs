@@ -40,25 +40,26 @@
             dataGridViewGoals = new DataGridView();
             buttonUpdate = new Button();
             buttonDelete = new Button();
+            label1 = new Label();
+            textBoxMatchID = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewGoals).BeginInit();
             SuspendLayout();
             // 
             // labelName
             // 
-            labelName.AutoSize = true;
             labelName.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelName.Location = new Point(139, 18);
+            labelName.Location = new Point(0, 18);
             labelName.Name = "labelName";
-            labelName.Size = new Size(96, 33);
+            labelName.Size = new Size(365, 33);
             labelName.TabIndex = 10;
-            labelName.Text = "GOAL";
+            labelName.Text = "GOALS";
             labelName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBoxTeam
             // 
             comboBoxTeam.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTeam.FormattingEnabled = true;
-            comboBoxTeam.Location = new Point(115, 68);
+            comboBoxTeam.Location = new Point(114, 123);
             comboBoxTeam.Name = "comboBoxTeam";
             comboBoxTeam.Size = new Size(181, 23);
             comboBoxTeam.TabIndex = 11;
@@ -68,7 +69,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(49, 72);
+            label2.Location = new Point(48, 127);
             label2.Name = "label2";
             label2.Size = new Size(50, 18);
             label2.TabIndex = 10;
@@ -78,7 +79,7 @@
             // 
             comboBoxPlayer.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPlayer.FormattingEnabled = true;
-            comboBoxPlayer.Location = new Point(115, 115);
+            comboBoxPlayer.Location = new Point(114, 170);
             comboBoxPlayer.Name = "comboBoxPlayer";
             comboBoxPlayer.Size = new Size(181, 23);
             comboBoxPlayer.TabIndex = 11;
@@ -87,7 +88,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(49, 119);
+            label3.Location = new Point(48, 174);
             label3.Name = "label3";
             label3.Size = new Size(53, 18);
             label3.TabIndex = 10;
@@ -95,7 +96,7 @@
             // 
             // textBoxMinute
             // 
-            textBoxMinute.Location = new Point(115, 163);
+            textBoxMinute.Location = new Point(114, 218);
             textBoxMinute.Name = "textBoxMinute";
             textBoxMinute.Size = new Size(181, 23);
             textBoxMinute.TabIndex = 11;
@@ -104,7 +105,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(45, 163);
+            label4.Location = new Point(44, 218);
             label4.Name = "label4";
             label4.Size = new Size(56, 18);
             label4.TabIndex = 10;
@@ -117,7 +118,7 @@
             buttonCreate.BackColor = Color.LightGreen;
             buttonCreate.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCreate.ForeColor = SystemColors.ControlText;
-            buttonCreate.Location = new Point(126, 273);
+            buttonCreate.Location = new Point(126, 334);
             buttonCreate.Name = "buttonCreate";
             buttonCreate.Size = new Size(134, 56);
             buttonCreate.TabIndex = 10;
@@ -129,7 +130,7 @@
             // 
             buttonMenu.BackColor = SystemColors.ButtonHighlight;
             buttonMenu.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonMenu.Location = new Point(115, 210);
+            buttonMenu.Location = new Point(114, 265);
             buttonMenu.Name = "buttonMenu";
             buttonMenu.Size = new Size(161, 42);
             buttonMenu.TabIndex = 21;
@@ -142,7 +143,7 @@
             dataGridViewGoals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewGoals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGoals.Dock = DockStyle.Bottom;
-            dataGridViewGoals.Location = new Point(0, 344);
+            dataGridViewGoals.Location = new Point(0, 405);
             dataGridViewGoals.Name = "dataGridViewGoals";
             dataGridViewGoals.RowTemplate.Height = 25;
             dataGridViewGoals.Size = new Size(365, 150);
@@ -155,7 +156,7 @@
             buttonUpdate.BackColor = Color.Gold;
             buttonUpdate.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonUpdate.ForeColor = SystemColors.ControlText;
-            buttonUpdate.Location = new Point(33, 273);
+            buttonUpdate.Location = new Point(33, 334);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(152, 56);
             buttonUpdate.TabIndex = 23;
@@ -171,7 +172,7 @@
             buttonDelete.BackColor = Color.LightCoral;
             buttonDelete.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDelete.ForeColor = SystemColors.ControlText;
-            buttonDelete.Location = new Point(203, 273);
+            buttonDelete.Location = new Point(203, 334);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(134, 56);
             buttonDelete.TabIndex = 24;
@@ -180,11 +181,31 @@
             buttonDelete.Visible = false;
             buttonDelete.Click += buttonDelete_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(30, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 18);
+            label1.TabIndex = 25;
+            label1.Text = "Match ID:";
+            // 
+            // textBoxMatchID
+            // 
+            textBoxMatchID.Enabled = false;
+            textBoxMatchID.Location = new Point(114, 74);
+            textBoxMatchID.Name = "textBoxMatchID";
+            textBoxMatchID.Size = new Size(181, 23);
+            textBoxMatchID.TabIndex = 26;
+            // 
             // GoalsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(365, 494);
+            ClientSize = new Size(365, 555);
+            Controls.Add(textBoxMatchID);
+            Controls.Add(label1);
             Controls.Add(buttonDelete);
             Controls.Add(buttonUpdate);
             Controls.Add(dataGridViewGoals);
@@ -219,5 +240,7 @@
         private DataGridView dataGridViewGoals;
         private Button buttonUpdate;
         private Button buttonDelete;
+        private Label label1;
+        private TextBox textBoxMatchID;
     }
 }

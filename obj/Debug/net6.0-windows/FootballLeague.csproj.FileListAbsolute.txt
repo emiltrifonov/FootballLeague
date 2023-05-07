@@ -102,3 +102,4 @@ E:\School\informatika\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.gen
 E:\School\informatika\FootballLeague\obj\Debug\net6.0-windows\ref\FootballLeague.dll
 E:\School\informatika\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.TeamsForm.resources
 E:\School\informatika\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.GoalsForm.resources
+E:\School\informatika\FootballLeague\obj\Debug\net6.0-windows\FootballLeague.RefereesForm.resources
