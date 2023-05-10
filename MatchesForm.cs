@@ -107,6 +107,8 @@ namespace FootballLeague
                     Program.context.Matches.Update(match);
                     break;
                 case "Delete":
+                    var goals = Program.context.Goals.Where(x => x.match == match).ToList();
+                    Program.context.Goals.RemoveRange(goals);
                     Program.context.Matches.Remove(match);
                     break;
             }

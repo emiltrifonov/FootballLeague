@@ -39,23 +39,27 @@ namespace FootballLeague
         {
             textBoxMatchID.Text = match.match_id.ToString();
 
-            goalscorer = Program.context.Players.Where(x => x.player_id == int.Parse(goal.player)).First().name;
-            team = Program.context.Teams.Where(x => x.team_id == goal.team).First().name;
             if (updateDelete)
             {
                 buttonCreate.Visible = false;
                 buttonUpdate.Visible = true;
                 buttonDelete.Visible = true;
-                //comboBoxTeam.SelectedItem = Program.context.Teams.Where(x => x.team_id == goal.team).First().name;
+                team = Program.context.Teams.Where(x => x.team_id == goal.team).First().name;
                 comboBoxTeam.Items.Add(team);
                 comboBoxTeam.SelectedIndex = 0;
-                //comboBoxPlayer.SelectedItem = Program.context.Players.Where(x => x.player_id == int.Parse(goal.player)).First().name;
+                goalscorer = Program.context.Players.Where(x => x.player_id == int.Parse(goal.player)).FirstOrDefault().name;
                 comboBoxPlayer.Items.Add(goalscorer);
                 comboBoxPlayer.SelectedIndex = 0;
                 textBoxMinute.Text = goal.minute.ToString();
                 var teams = Program.context.Teams.Where(x => x.team_id == match.team_1 || x.team_id == match.team_2).Select(x => x.name).ToList();
                 teams.Remove(team);
                 comboBoxTeam.Items.AddRange(teams.ToArray());
+            }
+            else
+            {
+                var teams = Program.context.Teams.Where(x => x.team_id == match.team_1 || x.team_id == match.team_2).Select(x => x.name).ToArray();
+                comboBoxTeam.Items.AddRange(teams.ToArray());
+                showGoalscorer = false;
             }
 
             dataGridViewGoals.DataSource = Program.context.Goals.Where(x => x.match_id == match.match_id).Select(x => new { x.goal_id, x.team, x.player, x.minute }).ToArray();
@@ -87,13 +91,22 @@ namespace FootballLeague
             {
                 goal_id = Program.context.Goals.Count() + 1,
                 match = this.match,
-                player = Program.context.Players.Select(x => x.name).Where(x => x == comboBoxPlayer.SelectedItem.ToString()).FirstOrDefault(),
+                player = Program.context.Players.Where(x => x.name == comboBoxPlayer.SelectedItem.ToString()).FirstOrDefault().player_id.ToString(),
+                team = Program.context.Teams.Where(x => x.name == comboBoxTeam.SelectedItem.ToString()).FirstOrDefault().team_id,
                 minute = int.Parse(textBoxMinute.Text)
             };
-
             Program.context.Goals.Add(goal);
+
+            if (comboBoxTeam.SelectedItem.ToString() == match.team_1Navigation.name)
+            {
+                match.goals_team_1++;
+            }
+            else match.goals_team_2++;
             Program.context.SaveChanges();
+
             var form = new MatchesForm(match, "Update");
+            this.Hide();
+            form.ShowDialog();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
